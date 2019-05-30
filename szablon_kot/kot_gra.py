@@ -1,6 +1,6 @@
 import pygame
-from szablon_kot.kotek import Kotek
-from szablon_kot.myszka import Myszka
+from kotek import Kotek
+from myszka import Myszka
 
 
 def jesli_myszka(polozenie_kota, polozenie_myszki):
