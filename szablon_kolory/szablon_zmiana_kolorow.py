@@ -1,4 +1,4 @@
-from szablon_kolory.prostokat import Prostokat
+from prostokat import Prostokat
 import pygame
 
 
