@@ -37,7 +37,6 @@ def tabela_dzialan():
 
 def sprawdz_przycisk_cyfra(posx, posy):
     if posx < 100 or posx > 280 or posy < 100 or posy > 225:
-        print("wywalam tutaj %s %s " %(posx, posy))
         return False
     przyciski_tabela = tabela_cyfr()
     for _ in range(10):
@@ -52,8 +51,6 @@ def sprawdz_przycisk_cyfra(posx, posy):
 
 def sprawdz_przycisk_dzialanie(posx, posy):
     if posx <= 300 or posx >= 340 or posy <= 75 or posy >= 220:
-        print("wywalam tutaj")
-
         return False
     przyciski_tabela = tabela_dzialan()
     for _ in przyciski_tabela:
@@ -88,14 +85,11 @@ def start():
                     done = True
             if event.type == pygame.MOUSEBUTTONUP:
                 pos = pygame.mouse.get_pos()
-                print(pos)
                 value = sprawdz_przycisk_cyfra(pos[0], pos[1])
                 if value and len(liczba) < 15:
-                    print(value)
                     if liczba == ostatnia_suma and liczba:
                         liczba = []
                     liczba.append(value)
-                    print(liczba)
                 dzialanie = sprawdz_przycisk_dzialanie(pos[0], pos[1])
                 if dzialanie == "=":
                     if liczba:
