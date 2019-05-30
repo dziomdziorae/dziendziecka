@@ -1,7 +1,7 @@
 import pygame
-from kitku.kotek import Kotek
-from kitku.myszka import Myszka
-from kitku.mina import Mina
+from kotek import Kotek
+from myszka import Myszka
+from mina import Mina
 
 
 background = [0, 0, 0]
