@@ -99,6 +99,7 @@ def start():
                         ostatnia_suma = liczba
                 elif dzialanie == 'c':
                     liczba = []
+                    operacje = []
                 elif dzialanie:
                     if operacje:
                         if not operacje[-1].isnumeric():
