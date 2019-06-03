@@ -9,30 +9,27 @@ background = [0, 0, 0]
 
 
 def tabela_cyfr():
-    cyfry_klawisze = {'1': [[100, 100], [150, 120]],
-                      '2': [[165, 100], [215, 120]],
-                      '3': [[230, 100], [280, 120]],
-                      '4': [[100, 135], [150, 155]],
-                      '5': [[165, 135], [215, 155]],
-                      '6': [[230, 135], [280, 155]],
-                      '7': [[100, 170], [150, 190]],
-                      '8': [[165, 170], [215, 190]],
-                      '9': [[230, 170], [280, 190]],
-                      '0': [[165, 205], [215, 225]]
-                      }
-    return cyfry_klawisze
+    return {'1': [[100, 100], [150, 120]],
+            '2': [[165, 100], [215, 120]],
+            '3': [[230, 100], [280, 120]],
+            '4': [[100, 135], [150, 155]],
+            '5': [[165, 135], [215, 155]],
+            '6': [[230, 135], [280, 155]],
+            '7': [[100, 170], [150, 190]],
+            '8': [[165, 170], [215, 190]],
+            '9': [[230, 170], [280, 190]],
+            '0': [[165, 205], [215, 225]]
+           }
 
 
 def tabela_dzialan():
-    dzialania_przyciski = {'\\': [[300, 75], [340, 95]],
-                           '+': [[300, 100], [340, 120]],
-                           '-': [[300, 125], [340, 145]],
-                           '*': [[300, 150], [340, 170]],
-                           '=': [[300, 175], [340, 195]],
-                           'c': [[300, 200], [340, 220]],
-
-                           }
-    return dzialania_przyciski
+    return {'/': [[300, 75], [340, 95]],
+            '+': [[300, 100], [340, 120]],
+            '-': [[300, 125], [340, 145]],
+            '*': [[300, 150], [340, 170]],
+            '=': [[300, 175], [340, 195]],
+            'c': [[300, 200], [340, 220]]
+            }
 
 
 def sprawdz_przycisk_cyfra(posx, posy):
@@ -61,6 +58,7 @@ def sprawdz_przycisk_dzialanie(posx, posy):
         if ((posx < posx_x_end)and posx > pos_x_begin) \
                 and ((posy < pos_y_end) and posy > pos_y_begin):
             return str(_)
+
 
 def start():
     ostatnia_suma = 0
@@ -112,9 +110,7 @@ def start():
                         operacje.append(dzialanie)
                         liczba = []
 
-
         font = pygame.font.SysFont("comicsansms", 18)
-
         pygame.draw.rect(okno, (255, 255, 255),
                          pygame.Rect(105, 60, monitor_dl, monitor_sz))
         text_value = font.render(''.join(liczba), True, (0, 0, 0))
@@ -136,5 +132,4 @@ def start():
                              klawisz_cyfra_dl, klawisz_cyfra_sz))
             text = font.render(str(_), True, (255, 255, 255))
             okno.blit(text, (pos_klawisz_x+26, pos_klawisz_y - 3))
-
         pygame.display.flip()
